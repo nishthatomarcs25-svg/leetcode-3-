@@ -1,0 +1,135 @@
+1-class Solution {
+public boolean isTrionic(int[] nums){
+
+int n=nums.length;
+if (n < 4) return false;
+
+int i=0;
+while(i+1<n&&nums[i]<nums[i+1]){
+i++;
+}
+if(i==0){
+return false;
+}
+int down=i;
+while(i+1<n&&nums[i]>nums[i+1]){
+i++;
+}
+if(i==down){
+return false;
+}
+int up2=i;
+while(i+1<n&&nums[i]<nums[i+1]){
+i++;
+}
+if(i==up2){
+return false;
+}
+return i==n-1;
+}
+}
+
+
+
+2-class Solution {
+public int[] twoSum(int[] nums, int target) {
+
+for (int i = 0; i < nums.length; i++) {
+for (int j = i + 1; j < nums.length; j++) {
+
+if (nums[i] + nums[j] == target) {
+return new int[] { i, j };
+}
+}
+}
+
+return new int[] {};
+}
+}
+3-class Solution {
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+ListNode head = new ListNode(0);
+ListNode temp = head;
+int carry = 0;
+
+while (l1 != null || l2 != null) {
+
+int sum = carry;
+
+if (l1 != null) {
+sum = sum + l1.val;
+l1 = l1.next;
+}
+
+if (l2 != null) {
+sum = sum + l2.val;
+l2 = l2.next;
+}
+
+carry = sum / 10;
+temp.next = new ListNode(sum % 10);
+temp = temp.next;
+}
+
+if (carry > 0) {
+temp.next = new ListNode(carry);
+}
+
+return head.next;
+}
+}   
+
+
+4-import java.util.HashSet;
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+
+        HashSet<Character> set = new HashSet<>();
+
+        int start = 0;   // starting index
+        int maxLen = 0;  // answer
+
+        for (int end = 0; end < s.length(); end++) {
+
+            char ch = s.charAt(end);
+
+            // if character already exists, remove from start
+            while (set.contains(ch)) {
+                set.remove(s.charAt(start));
+                start++;
+            }
+
+            set.add(ch);
+
+            int currentLength = end - start + 1;
+            if (currentLength > maxLen) {
+                maxLen = currentLength;
+            }
+        }
+
+        return maxLen;
+    }
+}
+     
+
+
+5-class Solution {
+    public boolean isPalindrome(int x) {
+        int c,s=0,r;
+        c=x;
+        while(x>0){
+            r=x%10;
+            s=r+(s*10);
+            x=x/10;
+        }
+        if(c==s){
+            return true;
+        }
+        else{
+           return false;
+        }
+    }
+}
+
