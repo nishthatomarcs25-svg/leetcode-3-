@@ -1,0 +1,119 @@
+1-import java.io*;
+import java.util.*;
+class userMain code{
+public int isprime(int input 1){
+if(input1==1){
+return 1;
+}
+for(int i=2;i<=Math.sqrt(input1);i++){
+if(input1%i==0){
+return 1;
+}
+}
+return 2;
+
+
+2-import java.io*;
+import java.util.*;
+class userMain code{
+public int nfactorial(int input1){
+int fact=1;
+for(int i=1;i<=input1;i++){
+fact=fact*i;
+}
+return fact;
+}
+}
+
+3-import java.io*;
+import java.util.*;
+class userMain code{
+public int uniquedigitcount(int input1){
+int digit;
+int count=0;
+int []arr=new int[10];
+while(input1!=0){
+digit=input1%10;
+arr[digit]=1;
+input1=input1/10;
+}
+for(int i=0;i<10;i++){
+if(arr[i]==1)
+count++;
+}
+}
+}
+
+
+4-import java.io*;
+import java.util.*;
+class userMain code{
+public int countprimerange(int input1,input2){
+int primecount=0;
+for(int num=input1,num<=input2;num++){
+int factor=0;
+for(int i=0;i<=num;i++){
+if(num%i==0)
+factor++;
+}
+if(factor==2)
+prime count++;
+}
+return prime count;
+}
+}
+
+5-int digit;
+int count=0;
+while(input1!=0){
+digit=imput1%10;
+count++;
+input1=input1/10;
+}
+return(count);
+
+6-import java.io*;
+import java.util.*;
+class userMain code{
+public int ndigit sum(input1){
+int sum=0;
+while(input1>0){
+sum=sum+(input1%10);
+n=n/10;
+}
+}
+}
+
+7-import java.io*;
+import java.util.*;
+class userMain code{
+public int evendigitsum(int input1){
+int digit;
+int count=0;
+while(input1!%=0){
+digit=input1%10;
+if(digit%2==0){
+count+=digit;
+}
+input1=input1/10;
+}
+return(count);
+}
+}
+
+8-import java.io*;
+import java.util.*;
+class userMain code{
+public int odddigitsum(int input1){
+int digit;
+int count=0;
+while(input1>0){
+digit=input1%10;
+if(digit%2==0){
+count+=digit;
+}
+input1=input1/10;
+}
+return(count);
+}
+}
