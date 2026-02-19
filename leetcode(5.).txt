@@ -1,0 +1,304 @@
+1-import java.util.Scanner;
+
+public class NaturalNumbersSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        
+        int sum = 0;
+
+        for(int i = 1; i <= N; i++) {
+            System.out.print(i + " ");
+            sum = sum + i;
+        }
+
+        System.out.println("\nSum = " + sum);
+    }
+}
+
+2-import java.util.Scanner;
+
+public class EvenNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int i = 1; i <= N; i++) {
+            if(i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+3-import java.util.Scanner;
+
+public class OddBetween {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+
+        for(int i = start; i <= end; i++) {
+            if(i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+4-import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            sum = sum + digit;
+            num = num / 10;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+5-import java.util.Scanner;
+
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+
+        while(num > 0) {
+            num = num / 10;
+            count++;
+        }
+
+        System.out.println("Digits = " + count);
+    }
+}
+
+6-import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int rev = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            rev = rev * 10 + digit;
+            num = num / 10;
+        }
+
+        System.out.println("Reverse = " + rev);
+    }
+}
+
+7-import java.util.Scanner;
+
+public class ProductDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int product = 1;
+
+        while(num > 0) {
+            int digit = num % 10;
+            product = product * digit;
+            num = num / 10;
+        }
+
+        System.out.println("Product = " + product);
+    }
+}
+
+
+8-import java.util.Scanner;
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        for(int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+}
+
+9-import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        boolean isPrime = true;
+
+        if(num <= 1) {
+            isPrime = false;
+        } else {
+            for(int i = 2; i <= num/2; i++) {
+                if(num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if(isPrime)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
+}
+
+10-import java.util.Scanner;
+
+public class PrimeRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int num = 2; num <= N; num++) {
+            boolean isPrime = true;
+
+            for(int i = 2; i <= num/2; i++) {
+                if(num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if(isPrime)
+                System.out.print(num + " ");
+        }
+    }
+}
+
+11-import java.util.Scanner;
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int original = num;
+        int rev = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            rev = rev * 10 + digit;
+            num = num / 10;
+        }
+
+        if(original == rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+12-import java.util.Scanner;
+
+public class ArmstrongRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int num = 1; num <= N; num++) {
+            int original = num;
+            int sum = 0;
+            int digits = 0;
+            int temp = num;
+
+            while(temp > 0) {
+                digits++;
+                temp /= 10;
+            }
+
+            temp = num;
+
+            while(temp > 0) {
+                int digit = temp % 10;
+                sum += Math.pow(digit, digits);
+                temp /= 10;
+            }
+
+            if(sum == original)
+                System.out.print(num + " ");
+        }
+    }
+}
+
+13-import java.util.Scanner;
+
+public class PerfectRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int num = 1; num <= N; num++) {
+            int sum = 0;
+
+            for(int i = 1; i <= num/2; i++) {
+                if(num % i == 0)
+                    sum += i;
+            }
+
+            if(sum == num)
+                System.out.print(num + " ");
+        }
+    }
+}
+
+14-import java.util.Scanner;
+
+public class StrongCheck {
+    
+    static int factorial(int n) {
+        int fact = 1;
+        for(int i = 1; i <= n; i++)
+            fact *= i;
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int original = num;
+        int sum = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            sum += factorial(digit);
+            num /= 10;
+        }
+
+        if(sum == original)
+            System.out.println("Strong Number");
+        else
+            System.out.println("Not Strong");
+    }
+}
+
+15-import java.util.Scanner;
+
+public class CountFactors {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+
+        for(int i = 1; i <= num; i++) {
+            if(num % i == 0)
+                count++;
+        }
+
+        System.out.println("Total Factors = " + count);
+    }
+}
