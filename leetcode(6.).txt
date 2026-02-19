@@ -1,0 +1,257 @@
+1-import java.util.Scanner;
+
+public class PowerOfTwo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        int value = 1;
+
+        for(int i = 1; i <= N; i++) {
+            System.out.print(value + " ");
+            value = value * 2;
+        }
+    }
+}
+
+2-import java.util.Scanner;
+
+public class SquareSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int i = 1; i <= N; i++) {
+            System.out.print((i * i) + " ");
+        }
+    }
+}
+3-import java.util.Scanner;
+
+public class HarmonicSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        double sum = 0;
+
+        for(int i = 1; i <= N; i++) {
+            sum += 1.0 / i;
+            System.out.print("1/" + i + " ");
+        }
+
+        System.out.println("\nSum = " + sum);
+    }
+}
+
+4-import java.util.Scanner;
+
+public class LargestDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int max = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            if(digit > max)
+                max = digit;
+            num /= 10;
+        }
+
+        System.out.println("Largest Digit = " + max);
+    }
+}
+
+5-import java.util.Scanner;
+
+public class SmallestDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int min = 9;
+
+        while(num > 0) {
+            int digit = num % 10;
+            if(digit < min)
+                min = digit;
+            num /= 10;
+        }
+
+        System.out.println("Smallest Digit = " + min);
+    }
+}
+
+6-import java.util.Scanner;
+
+public class CountEvenDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            if(digit % 2 == 0)
+                count++;
+            num /= 10;
+        }
+
+        System.out.println("Even Digits = " + count);
+    }
+}
+
+7-import java.util.Scanner;
+
+public class CountOddDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            if(digit % 2 != 0)
+                count++;
+            num /= 10;
+        }
+
+        System.out.println("Odd Digits = " + count);
+    }
+}
+
+8-import java.util.Scanner;
+
+public class AutomorphicCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        int square = num * num;
+        int temp = num;
+
+        boolean isAutomorphic = true;
+
+        while(temp > 0) {
+            if(temp % 10 != square % 10) {
+                isAutomorphic = false;
+                break;
+            }
+            temp /= 10;
+            square /= 10;
+        }
+
+        if(isAutomorphic)
+            System.out.println("Automorphic");
+        else
+            System.out.println("Not Automorphic");
+    }
+}
+
+9-import java.util.Scanner;
+
+public class ReverseRemainder {
+    static int reverse(int num) {
+        int rev = 0;
+        while(num > 0) {
+            rev = rev * 10 + (num % 10);
+            num /= 10;
+        }
+        return rev;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+
+        for(int i = start; i <= end; i++) {
+            int rev = reverse(i);
+
+            if(i % 3 == rev % 3)
+                System.out.print(i + " ");
+        }
+    }
+}
+
+10-import java.util.Scanner;
+
+public class DisariumCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int original = num;
+
+        int temp = num;
+        int digits = 0;
+
+        // Count digits
+        while(temp > 0) {
+            digits++;
+            temp /= 10;
+        }
+
+        temp = num;
+        int sum = 0;
+
+        while(temp > 0) {
+            int digit = temp % 10;
+            sum += Math.pow(digit, digits);
+            digits--;
+            temp /= 10;
+        }
+
+        if(sum == original)
+            System.out.println("Disarium Number");
+        else
+            System.out.println("Not Disarium");
+    }
+}
+
+11-import java.util.Scanner;
+
+public class SpyCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        int sum = 0, product = 1;
+
+        while(num > 0) {
+            int digit = num % 10;
+            sum += digit;
+            product *= digit;
+            num /= 10;
+        }
+
+        if(sum == product)
+            System.out.println("Spy Number");
+        else
+            System.out.println("Not Spy");
+    }
+}
+
+12-import java.util.Scanner;
+
+public class SumEqualProductRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+
+        for(int num = start; num <= end; num++) {
+            int temp = num;
+            int sum = 0, product = 1;
+
+            while(temp > 0) {
+                int digit = temp % 10;
+                sum += digit;
+                product *= digit;
+                temp /= 10;
+            }
+
+            if(sum == product)
+                System.out.print(num + " ");
+        }
+    }
+}
